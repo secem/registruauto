@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="860.0" style="-fx-background-color: #35363A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="registruauto.gui.FXML_Dark_AcasaController">
+   <children>
+      <ImageView fitHeight="533.0" fitWidth="711.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-150.0" AnchorPane.rightAnchor="30.0">
+         <image>
+            <Image url="@logo/no_logo.png" />
+         </image>
+      </ImageView>
+      <GridPane prefHeight="584.0" prefWidth="860.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="435.0" minHeight="10.0" prefHeight="312.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <children>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #4B4B4B; -fx-background-radius: 10;">
+               <children>
+                  <HBox prefHeight="47.0" prefWidth="800.0">
+                     <children>
+                        <ImageView fitHeight="41.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_car_96px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label prefHeight="40.0" prefWidth="42.0" text="Aveți" textFill="#cccbcb">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="nrMasini" alignment="CENTER" prefHeight="40.0" prefWidth="28.0" text="3" textAlignment="CENTER" textFill="#cccbcb">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label prefHeight="40.0" prefWidth="122.0" text="mașini în garaj." textFill="#cccbcb">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #4B4B4B; -fx-background-radius: 10;" GridPane.rowIndex="2">
+               <children>
+                  <HBox prefHeight="282.0" prefWidth="800.0">
+                     <children>
+                        <ImageView fitHeight="41.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_calendar_7_48px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label prefHeight="40.0" prefWidth="159.0" text="Ultima vizită a fost:" textFill="#cccbcb">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="dataUltimiiVizite" prefHeight="40.0" prefWidth="134.0" text="astazi" textAlignment="CENTER" textFill="#cccbcb">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane layoutX="40.0" layoutY="190.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #4B4B4B; -fx-background-radius: 10;" GridPane.rowIndex="1">
+               <children>
+                  <HBox prefHeight="46.0" prefWidth="273.0">
+                     <children>
+                        <ImageView fitHeight="41.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_alarm_48px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label prefHeight="40.0" prefWidth="42.0" text="Aveți" textFill="#cccbcb">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="nrNotificari" alignment="CENTER" prefHeight="40.0" prefWidth="28.0" text="2" textAlignment="CENTER" textFill="#cccbcb">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label prefHeight="40.0" prefWidth="137.0" text="notificări în total." textFill="#cccbcb">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

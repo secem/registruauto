@@ -1,0 +1,39 @@
+Registru de deservire auto
+
+Requirements:
+1. Trebuie sa aiba on interfata grafica
+
+
+Functionalitati:
+2. Adaugarea unui automobil
+	2.1 Marca si modelul(Free form text field)
+	2.2 Data producerii(Date picker)
+	2.3 Parcursul(number field)
+	2.4 Culoarea(Free form text field)
+	2.5 Numarul de inregistrare(Free form text field)
+	2.6 Codul VIN(Free form text field)
+	2.7 In dependenta de Marca masinii, aplicatia va afisa automat logoul brandului respectiv
+	2.8 Daca nu este gasit logoul atunci se va afisa semnul intrebarii in loc de logo
+	2.9 Toate campurile vor fi obligatorii pentru completare
+
+3. Stergerea unui automobil
+	3.1 Stergerea v-a elimina automobilul din interfata grafica. Datele auto vor ramane in DB(pentru arhiva)
+	3.2 Inainte de a elimina auto, Utilizatorul v-a fi intrebat sa confirme actiunea
+
+4. Adaugarea unei vizite la service
+	4.1 Data inregistrarii(Date picker)
+	4.2 Tipul lucrarilor efectuate(free form text box sau tabel cu adaugare de randuri?)
+	4.3 Costul lucrarilor per serviciu
+	4.4 Parcursul curent(number field)
+	4.5 Nume Service auto(Free form text field)
+	4.6 Costul lucrarilor total pe vizita
+
+5. Generarea raportului auto in format PDF
+	5.1 Utilizatorul v-a indica unde vrea sa salveze fisierul
+	5.2 Fisierul v-a avea un nume predefinit "Raport auto.pdf", cu posibilitatea de a-l modifica
+	
+
+6. Trebuie sa suporte mai multe automobile active
+
+7. Adaugarea unei vizite se va face pentru automobilul selectat din lista de automobile active
+

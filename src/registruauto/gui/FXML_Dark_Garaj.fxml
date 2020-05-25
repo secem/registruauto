@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTogglePane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="860.0" style="-fx-background-color: #35363A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="registruauto.gui.FXML_Dark_GarajController">
+   <children>
+      <ImageView fitHeight="126.0" fitWidth="126.0" layoutX="661.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <image>
+            <Image url="@../util/png/icons8_garage_96px_3.png" />
+         </image>
+      </ImageView>
+      <GridPane prefHeight="584.0" prefWidth="860.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="444.0" minHeight="70.0" prefHeight="380.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXButton onAction="#handleAdaugaAuto" prefHeight="70.0" prefWidth="213.0" text="Adaugă Automobil" textFill="#cccbcb">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_plus_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton onAction="#handleEditAuto" prefHeight="70.0" prefWidth="223.0" text="Editează Automobil" textFill="#cccbcb">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_edit_48px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="75.0" right="75.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#handleStergeAuto" prefHeight="70.0" prefWidth="229.0" text="Șterge Automobil" textFill="#cccbcb">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_delete_trash_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXTogglePane fx:id="togglePane" prefHeight="390.0" prefWidth="820.0" visible="false" GridPane.rowIndex="1">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="404.0" prefWidth="650.0">
+                           <children>
+                              <Label prefHeight="9.0" prefWidth="103.0" text="Marcă și Model" textFill="#cccbcb">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <JFXTextField fx:id="textModelAuto" onMouseExited="#handleAutomaticLogo" style="-fx-text-inner-color: #FFFFFF;" unFocusColor="#4d4d4d">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label prefHeight="9.0" prefWidth="103.0" text="Anul Producerii" textFill="#cccbcb">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <JFXTextField fx:id="anulProd" style="-fx-text-inner-color: #FFFFFF;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label prefHeight="9.0" prefWidth="103.0" text="Parcursul inițial" textFill="#cccbcb">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <JFXTextField fx:id="parcurs" style="-fx-text-inner-color: #FFFFFF;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label prefHeight="9.0" prefWidth="103.0" text="Culoarea" textFill="#cccbcb">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <JFXTextField fx:id="culoarea" style="-fx-text-inner-color: #FFFFFF;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label prefHeight="20.0" prefWidth="157.0" text="Număr de Înmatriculare" textFill="#cccbcb">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <JFXTextField fx:id="nrInmatr" style="-fx-text-inner-color: #FFFFFF;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label prefHeight="20.0" prefWidth="157.0" text="Codul VIN" textFill="#cccbcb">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <JFXTextField fx:id="codVIN" style="-fx-text-inner-color: #FFFFFF;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="404.0" prefWidth="443.0">
+                           <children>
+                              <ImageView fx:id="logo" fitHeight="171.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="60.0" right="40.0" top="50.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <JFXButton fx:id="browseLogo" onAction="#handleBrowseLogo" prefHeight="44.0" prefWidth="195.0" text="Cauta Imagine..." textAlignment="CENTER" textFill="#cccbcb">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="60.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../util/png/icons8_search_folder_48px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </JFXTogglePane>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <JFXButton onAction="#handleSaveButton" prefHeight="70.0" prefWidth="213.0" text="Salvează" textFill="#cccbcb">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_save_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton onAction="#handleButonRenunta" prefHeight="70.0" prefWidth="213.0" text="Renunță" textFill="#cccbcb">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_unavailable_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="860.0" style="-fx-background-color: #35363A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="registruauto.gui.FXML_Dark_ReparatiiController">
+   <children>
+      <ImageView fitHeight="126.0" fitWidth="126.0" layoutX="661.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <image>
+            <Image url="@../util/png/icons8_car_service_96px_1.png" />
+         </image>
+      </ImageView>
+      <GridPane prefHeight="584.0" prefWidth="860.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="444.0" minHeight="70.0" prefHeight="192.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="26.0" minHeight="26.0" prefHeight="26.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+               <children>
+                  <JFXButton onAction="#handleSalveaza" prefHeight="70.0" prefWidth="213.0" text="Salvează" textFill="#cccbcb">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_save_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton onAction="#handleRenunta" prefHeight="70.0" prefWidth="213.0" text="Renunță" textFill="#cccbcb">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_unavailable_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="820.0">
+               <children>
+                  <VBox prefHeight="22.0" prefWidth="650.0">
+                     <children>
+                        <Label prefHeight="9.0" prefWidth="103.0" text="Data Înregistrării" textFill="#cccbcb">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <JFXDatePicker fx:id="dataInreg" defaultColor="#4059a9" editable="false" prefHeight="40.0" prefWidth="183.0" style="-fx-text-inner-color: #FFFFFF; -fx-font: 15px &quot;System&quot;;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="65.0" prefWidth="822.0" GridPane.rowIndex="1">
+               <children>
+                  <VBox prefHeight="65.0" prefWidth="650.0">
+                     <children>
+                        <Label prefHeight="9.0" prefWidth="103.0" text="Parcursul curent" textFill="#cccbcb">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="parcurs" prefHeight="39.0" prefWidth="628.0" promptText="Parcursul Curent" style="-fx-text-inner-color: #FFFFFF; -fx-prompt-text-fill: #35363A;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <VBox prefHeight="404.0" prefWidth="650.0">
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="124.0" text="Nume service auto" textFill="#cccbcb">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="numeService" style="-fx-text-inner-color: #FFFFFF;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <VBox prefHeight="65.0" prefWidth="522.0">
+                     <children>
+                        <Label prefHeight="9.0" prefWidth="103.0" text="Adaugă lucrare" textFill="#cccbcb">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="lucrareDeAdaugat" style="-fx-text-inner-color: #FFFFFF;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="65.0" prefWidth="148.0">
+                     <children>
+                        <Label prefHeight="9.0" prefWidth="103.0" text="Cost lucrare" textFill="#cccbcb">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="costDeAdaugat" prefHeight="39.0" prefWidth="354.0" promptText="Cost lucrare" style="-fx-text-inner-color: #FFFFFF; -fx-prompt-text-fill: #35363A;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <JFXButton alignment="CENTER" onAction="#handleButonAdauga" prefHeight="80.0" prefWidth="135.0" text="Adaugă" textFill="#cccbcb">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/png/icons8_plus_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="820.0" style="-fx-background-color: #35363A;" GridPane.rowIndex="5">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="78.0" text="Cost total:" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="costTotal" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="118.13671875">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Label prefHeight="27.0" prefWidth="19.0" text="lei" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <TableView fx:id="tabelLucrari" prefHeight="215.0" prefWidth="820.0" stylesheets="@util/tableView.css" GridPane.rowIndex="4">
+              <columns>
+                <TableColumn fx:id="colLucrare" maxWidth="660.0" minWidth="660.0" prefWidth="660.0" resizable="false" text="Lucrare" />
+                <TableColumn fx:id="colCost" maxWidth="145.0" minWidth="145.0" prefWidth="145.0" resizable="false" styleClass="custom-align" text="Cost" />
+              </columns>
+            </TableView>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

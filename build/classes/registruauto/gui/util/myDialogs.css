@@ -1,0 +1,52 @@
+.dialog-pane {
+    -fx-background-color: #35363A;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: #cccbcb;
+    -fx-font-size: 14px;
+}
+
+.dialog-pane:header .header-panel {
+    -fx-background-color: #35363A;
+}
+
+.dialog-pane:header .header-panel .label {
+    -fx-font-size: 18px;
+}
+
+.button {
+    -fx-border-color: #35363A;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #35363A;
+    -fx-font-size: 14px;
+    -fx-text-fill: #cccbcb;
+}
+
+.button:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+.button:pressed, .button:default:hover:pressed {
+  -fx-background-color: derive(-fx-focus-color,30%);
+  -fx-text-fill: #cccbcb;
+}
+
+.button:focused {
+    -fx-border-color: white, white;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}

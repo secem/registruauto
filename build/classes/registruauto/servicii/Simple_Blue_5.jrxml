@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Simple_Blue_5" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6b763123-df15-4dc4-87dc-e3c3f830c911">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<parameter name="a.id" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT a.id, model, data_prod, a.parcurs, culoare, nr_inmatr, vin, logo,
+v.data, v.parcurs_vizita, v.auto_service, 
+l.desc_lucrare, l.cost_lucrare
+FROM registruauto.auto as a, registruauto.lucrare as l, registruauto.vizita as v
+where a.active='1'and l.id_vizita=v.id and v.id_auto=a.id and a.id=$P{a.id}
+order by a.id]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="auto"/>
+	</field>
+	<field name="model" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="model"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="auto"/>
+	</field>
+	<field name="data_prod" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="data_prod"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="auto"/>
+	</field>
+	<field name="parcurs" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="parcurs"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="auto"/>
+	</field>
+	<field name="culoare" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="culoare"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="auto"/>
+	</field>
+	<field name="nr_inmatr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nr_inmatr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="auto"/>
+	</field>
+	<field name="vin" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="vin"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="auto"/>
+	</field>
+	<field name="data" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="data"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vizita"/>
+	</field>
+	<field name="parcurs_vizita" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="parcurs"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vizita"/>
+	</field>
+	<field name="auto_service" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="auto_service"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vizita"/>
+	</field>
+	<field name="desc_lucrare" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="desc_lucrare"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lucrare"/>
+	</field>
+	<field name="cost_lucrare" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="cost_lucrare"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lucrare"/>
+	</field>
+	<field name="logo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="logo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="auto"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{model}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="-25" width="180" height="20" forecolor="#006699" uuid="b631e551-e126-4a83-a8e1-b50dec62798c"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{model}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="-25" width="100" height="20" forecolor="#666666" uuid="daa0120d-d6c0-469c-95c1-bebafdd4e132">
+						<property name="com.jaspersoft.studio.element.name" value="Marca si modelul"/>
+					</reportElement>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Marca si modelul]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="280" y="7" width="100" height="20" forecolor="#666666" uuid="6b0fc8b2-bc20-46df-a0ab-74dd7b1af5e2"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Nr. inmatriculare]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="380" y="6" width="175" height="20" forecolor="#006699" uuid="1caf5f74-779e-44f5-829c-78f7880e11c9"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nr_inmatr}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupExpression><![CDATA[$F{data_prod}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="-25" width="180" height="20" forecolor="#006699" uuid="bca6742b-ef00-479a-968a-88fff671752c"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{data_prod}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="-25" width="100" height="20" forecolor="#666666" uuid="e8503a24-af8e-45a3-a2ae-cda7c074587a"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Anul producerii]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="280" y="6" width="100" height="20" forecolor="#666666" uuid="10b7c7ad-7d69-4ce2-8f9a-c7cf832c1055"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Codul VIN]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="380" y="6" width="175" height="20" forecolor="#006699" uuid="12c0e777-907f-4266-bf27-a0d84fbf85cd"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vin}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupExpression><![CDATA[$F{parcurs}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<textField>
+					<reportElement x="100" y="-25" width="180" height="20" forecolor="#006699" uuid="06cf9a50-fed8-4eb0-ba5c-e4caf0ff3e09"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{parcurs}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="-25" width="100" height="20" forecolor="#666666" uuid="0baebc17-afbc-4942-ab4e-51235e21d63a"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Parcursul initial]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="12" width="80" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c1d1a5b1-a399-4482-95ff-62423633772e">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6aa433ec-89ea-436a-9e86-9cb37d666f18"/>
+						<property name="com.jaspersoft.studio.element.name" value="Data"/>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Data]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="80" y="12" width="80" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="780e61a6-bd8a-49cc-81f8-8b4a152fde3f">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d0d45a9c-ab7a-4ce4-8be7-c2086c57f9e1"/>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Parcurs]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="160" y="12" width="120" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a96307b5-ea0d-4591-bc49-2fa11f5ddae8">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8611b5f0-836c-42e5-bab1-37235d8ebce8"/>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nume autoservice]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="280" y="12" width="200" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="995ed965-f1d7-4468-bc19-a109448236cd">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b25e3759-7cb3-45a5-832e-492f1625f678"/>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Descriere lucrare]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="480" y="12" width="75" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7676d2d6-e9b1-4563-99ef-b34072e510e3">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="db1c5ab3-40c8-482a-97da-9f616dbcddb1"/>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cost lucrare]]></text>
+				</staticText>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="2e05078c-4235-4b9f-b11f-f9fe6b86b8ff"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="culoare">
+		<groupExpression><![CDATA[$F{culoare}]]></groupExpression>
+	</group>
+	<group name="nr_inmatr">
+		<groupExpression><![CDATA[$F{nr_inmatr}]]></groupExpression>
+	</group>
+	<group name="vin">
+		<groupExpression><![CDATA[$F{vin}]]></groupExpression>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="9cfb4d31-dff8-41d1-83a2-2aa8880a7a05"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="8ff91b55-1257-47d3-858a-0cf196312ee0"/>
+					<textElement>
+						<font size="34" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Raport Auto]]></text>
+				</staticText>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="400" y="10" width="175" height="70" uuid="6c6c2b71-0303-41db-ba83-0b868543f9ad"/>
+					<imageExpression><![CDATA[$F{logo}.substring( 6 ).replaceAll("%20"," ")]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37">
+			<staticText>
+				<reportElement x="280" y="12" width="100" height="20" forecolor="#666666" uuid="ebc5fb0a-5d2d-4a6e-b8c9-7dc4b9656731">
+					<property name="com.jaspersoft.studio.element.name" value="Marca si modelul"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Culoarea]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="12" width="175" height="20" forecolor="#006699" uuid="453cdd6a-9f58-4939-978e-79738d5270b5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{culoare}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="dd06d409-1064-4bf2-a380-dd7cd4e0a607"/>
+			</line>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="0" width="80" height="20" uuid="0ea4cb7a-1a94-4e22-bf59-e0bc3c65d038">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6aa433ec-89ea-436a-9e86-9cb37d666f18"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+				<patternExpression><![CDATA["dd/MM/yyyy"]]></patternExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="80" y="0" width="80" height="20" uuid="fba5f0e7-d6ca-47d1-b09f-de8894bf3739">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d0d45a9c-ab7a-4ce4-8be7-c2086c57f9e1"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parcurs_vizita}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="160" y="0" width="120" height="20" uuid="cab7c140-6bbb-4b9f-a0d6-95878d837a73">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8611b5f0-836c-42e5-bab1-37235d8ebce8"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{auto_service}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="280" y="0" width="200" height="20" uuid="9a6cdc4c-7b77-4d9d-927d-d04b4342f930">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b25e3759-7cb3-45a5-832e-492f1625f678"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desc_lucrare}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="480" y="0" width="75" height="20" uuid="963851a3-b36f-44d7-8f29-f7470abcce7a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="db1c5ab3-40c8-482a-97da-9f616dbcddb1"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cost_lucrare}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="7c72ebd2-dcb9-46b9-9a6c-c1e893e2583d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="f5bf2e5a-0531-46b1-ba87-58b6301b3a9a"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="88" height="13" uuid="34274e24-40ee-4598-bcf0-478000868f62"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+	<noData>
+		<band height="141" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="0" width="595" height="92" backcolor="#006699" uuid="3fd46cd8-64d9-4cd2-b9ad-0e79fe5c5949"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="afd1fd41-376d-4cd3-87ba-d018f5574733"/>
+					<textElement>
+						<font size="34" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Raport Auto]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="80" y="110" width="400" height="30" uuid="04eb9e96-04a2-401f-9246-aef86d42c9f9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Nu sunt inregistrari de deservire pentru automobilul dat]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>
